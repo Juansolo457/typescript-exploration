@@ -60,7 +60,8 @@ export class AppComponent implements OnInit {
     console.log('resultRandomUserFromSvc', resultRandomUserFromSvc);
     // Problem #8
     this.problem456Service.currentUserList = this.users;
-    console.log('get from svc set' ,this.problem456Service.getCurrentUsers.getValue());
+    console.log('get from svc0.' +
+      ' set' ,this.problem456Service.getCurrentUsers.getValue());
   }
 
 }

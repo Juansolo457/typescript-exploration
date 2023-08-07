@@ -1,6 +1,7 @@
 # TypescriptExploration - Description 
 
-This is a small project using angular to do typescript exercises and run through problems using typescript
+This project serves as a platform for practicing and exploring TypeScript and Angular. It contains a variety of exercises, 
+problem-solving scenarios, and solutions implemented using Angular and TypeScript.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
