@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'typescript-exploration';
+
+  /* Typescript Exploration - Problems:
+  Problem #1 - see problem1.ts
+ */
 }
