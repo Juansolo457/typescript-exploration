@@ -14,24 +14,27 @@
 
  */
 
-export type User = unknown;
+// export type User = unknown;
 
-export const users: unknown[] = [
-  {
-    name: 'Max Mustermann',
-    age: 25,
-    occupation: 'Chimney sweep'
-  },
-  {
-    name: 'Kate Müller',
-    age: 23,
-    occupation: 'Astronaut'
-  }
-];
+export interface User {
+  age: number,
+  name: string,
+  occupation: string,
+}
 
-export function logPerson(user: unknown) {
-  console.log(` - ${user.name}, ${user.age}`);
+
+export function logPerson(user: User): void {
+  console.log(`Problem #1 - ${user.name}, ${user.age}`);
+}
+
+export function logRandomPerson(user: User[]): void {
+  let userLen: number = user.length
+  const randomUser = getRandomInt(0, userLen)
+  return console.log(`Problem #2, #3 Random User - ${user[randomUser]?.name}, ${user[randomUser]?.age}`);
+}
+
+function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 console.log('Users:');
-users.forEach(logPerson);
