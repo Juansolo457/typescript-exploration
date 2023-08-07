@@ -55,7 +55,7 @@ export const persons: Person[] = [
 
 export function logPerson(person: Person) {
   let additionalInformation: string;
-  if ('role' in person) {
+  if ('role' in person) {  // Issue was here, there was no in, only using person.role before
     additionalInformation = person.role;
   } else {
     additionalInformation = person.occupation;
