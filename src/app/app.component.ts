@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { logPerson, logRandomPerson, User } from './problems/problem1';
+import { filterUsers, Occupation, Person } from './problems/problem11,12';
 import { Problem456Service } from './services/problem456.service';
 
 @Component({
@@ -53,6 +54,40 @@ export class AppComponent implements OnInit {
 
   ];
 
+  private persons: Person[] = [
+    { type: 'user', name: 'Max Mustermann', age: 25, occupation: Occupation.chimneySweep },
+    {
+      type: 'admin',
+      name: 'Jane Doe',
+      age: 32,
+      role: 'Administrator'
+    },
+    {
+      type: 'user',
+      name: 'Kate Müller',
+      age: 23,
+      occupation: Occupation.astronaut
+    },
+    {
+      type: 'admin',
+      name: 'Bruce Willis',
+      age: 64,
+      role: 'World saver'
+    },
+    {
+      type: 'user',
+      name: 'Wilson',
+      age: 23,
+      occupation: Occupation.ball
+    },
+    {
+      type: 'admin',
+      name: 'Agent Smith',
+      age: 23,
+      role: Occupation.admin
+    }
+  ];
+
   public ngOnInit() {
     logPerson(this.users[1])
     logRandomPerson(this.users)
@@ -62,6 +97,15 @@ export class AppComponent implements OnInit {
     this.problem456Service.currentUserList = this.users;
     console.log('get from svc0.' +
       ' set' ,this.problem456Service.getCurrentUsers.getValue());
+    /*  Problem 13   */
+    filterUsers(
+      this.persons,
+      {
+        age: 23
+      }
+    ).forEach( (usr: User) => {
+      this.problem456Service.logPersonFromSvc(usr,13)
+    } );
   }
 
 }

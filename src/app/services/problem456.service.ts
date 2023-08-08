@@ -19,8 +19,11 @@ export class Problem456Service {
     this.currentUser$.next(user);
   }
 
-  public logPersonFromSvc(user: User): void {
-    console.log(`From SVC - Problem #1 - ${user.name}, ${user.age}`);
+  public logPersonFromSvc(user: User, problemOrigin?: number): void {
+    if (problemOrigin !== undefined) {
+      console.log(`From SVC - Origin from problem: ${problemOrigin} with user ${user}`);
+    }
+    console.log(`From SVC - ${user.name}, ${user.age}`);
   }
 
   public logRandomPerson(user: User[]): string {
